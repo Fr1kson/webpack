@@ -82,10 +82,7 @@ module.exports = {
   },
   plugins: [
     new WebpackManifestPlugin({
-      basePath: path.resolve(environment.paths.output),
-      publicPath: '/',
-      removeKeyHash: true,
-      writeToFileEmit: true
+      publicPath: '/'
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name][hash].css',

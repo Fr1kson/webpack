@@ -15,14 +15,9 @@ module.exports = merge(webpackConfiguration, {
     devMiddleware: {
       writeToDisk: true
     },
-    static: [
-      {
-        directory: path.resolve(environment.paths.output)
-      },
-      {
-        directory: path.resolve(environment.paths.source)
-      }
-    ],
+    static: {
+      directory: path.resolve(environment.paths.source)
+    },
     open: true,
     host: 'localhost',
     port: 3000,

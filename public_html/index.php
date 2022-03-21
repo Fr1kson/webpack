@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <?
+    function asset($asset_name) {
+        $manifest = file_get_contents("./dist/manifest.json");
+        $manifest = json_decode($manifest, true);
+        if (!isset($manifest[$asset_name])) return $asset_name;
+        return "/dist/" . $manifest[$asset_name];
+    }
+    ?>
     <meta charset="UTF-8">
     <title>Webpack Boilerplate Starter Template</title>
     <meta name="description" content="Simple starter webpack 5 project template boilerplate supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.">
     <meta name="keywords" content="webpack, webpack-configuration, template, boilerplate, setup, html, css, sass, javascript">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Plamen Nikolov, WeAreAthlon">
-    <link rel="stylesheet" href="/dist/css/app.css">
-    <script src="/dist/js/app.js"></script>
+    <link rel="stylesheet" href="<?php echo asset("app.css"); ?>">
+    <script src="<?php echo asset("app.js"); ?>"></script>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
   </head>
   <body>
