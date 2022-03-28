@@ -8,7 +8,7 @@ const environment = require('./environment');
 module.exports = merge(webpackConfiguration, {
   output: {
     path: path.resolve(environment.paths.output),
-    filename: 'js/app.js',
+    filename: 'js/[name].js',
   },
   target: 'web',
   devServer: {

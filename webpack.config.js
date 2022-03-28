@@ -9,7 +9,8 @@ const environment = require('./configuration/environment');
 
 module.exports = {
   entry: {
-    app: path.resolve(environment.paths.source, 'js', 'app.js'),
+    app: './src/js/app.js',
+    lk: './src/js/pages/lk.js',
   },
   output: {
     filename: 'js/[name].js',
